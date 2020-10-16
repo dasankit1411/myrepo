@@ -1,0 +1,42 @@
+{% extends 'hospital/navigation.html' %}
+{% block body %}
+
+<div class="container" style='margin-top:50px'>
+  <h1 class='text-center'>Add Appointment </h1>
+  <br><br>
+  <form class=""  method="post">
+    {%csrf_token%}
+    <label>Doctor Name</label>
+    <select name='doctor' class='form-control' >
+      {% for i in doctor %}
+      <option value='{{i.name}}'>{{i.name}} [{{i.id}}]</option>
+      {% endfor %}
+    </select>
+    <label>Patient Name</label>&emsp;&emsp;
+    <select name='patient' class='form-control' >
+      {% for i in patient %}
+      <option value='{{i.name}}'>{{i.name}} [{{i.id}}]</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label>Date</label>
+    <input type="date" class='form-control' name="date" required >
+    <label>Time</label>
+    <input type="time" class='form-control' name="time" required >
+    <br>
+    <input type="submit" class='form-control btn btn-primary ' value="submit">
+  </form>
+</div>
+{% ifequal error 'no' %}
+<script>
+  alert('Record Saved Successfully');
+  window.location=('{% url 'view_appointment' %}');
+</script>
+{% endifequal %}
+{% ifequal error 'yes' %}
+<script>
+  alert('something went wrong,Try Again');
+</script>
+{% endifequal %}
+
+{% endblock %}
