@@ -1,0 +1,35 @@
+.nav-link{
+  font-size: 20px;
+  color: white !important;
+}
+
+.nav-link:hover{
+  color: yellow !important;
+  background: purple;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.navbar-brand:hover{
+  font-size: 30px;
+  color:yellow !important;
+  font-weight: bold;
+}
+.rounded{
+  border-top: 5px solid lightblue;
+  border-radius: 5px;
+}
+
+.mydiv:hover{
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+  transform:translateY(-20px);
+}
+
+.myimg{
+  height:40px;
+  width:40px;
+  border-radius: 3px;
+}
+#bg{
+  background-repeat: no-repeat;
+  background-size:cover;
+}
